@@ -1,7 +1,8 @@
 <?php
-// extract ISOGG Y-DNA SNP Index - version 0.1.0
+// extract ISOGG Y-DNA SNP Index 
 // Copyright 2014 Rob Hoare.  License: MIT.  
 // https://github.com/OpenGenealogy/isoggy	
+$version = '0.1.1';
 $page = file_get_contents('php://stdin');
 preg_match_all("~<tr>(.*?)</tr>~s",$page,$matches);
 foreach($matches[0] as $match) {
@@ -24,4 +25,4 @@ foreach($matches[0] as $match) {
 	};	
 	$l = '';
 };		
-
+exit;

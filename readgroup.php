@@ -1,7 +1,8 @@
 <?php
-// extract haplogroup - parameter is A to T. - version 0.1.0
+// extract haplogroup tree data.
 // Copyright 2014 Rob Hoare.  License: MIT.
 // https://github.com/OpenGenealogy/isoggy
+$version = '0.1.1';
 $page = file_get_contents('php://stdin');
 preg_match_all("~<!(.*?)<br>~s",$page,$matches);
 foreach($matches[0] as $match) {
@@ -15,10 +16,14 @@ foreach($matches[0] as $match) {
 	if (!strstr($entry,'font-weight:')) { // skip stylesheet
 		$entry = trim(str_replace('">','',$entry));
 		$e = split(' ',$entry,2);
-		$sn = trim(array_pop($e));
+		$snp = trim(array_pop($e));
 		$sc = trim($e[0]);
-		$sn = str_replace('/S9 PF605','/S9,PF605',$sn); // quick fix
-		$sn = str_replace(' ','',$sn);		
-		echo "$sc|$sn\n";
+		$snp = str_replace('/S9 PF605','/S9,PF605',$snp); // fix R
+		$snp = str_replace(' ','',$snp);
+		$snp = str_replace('>','',$snp);
+		if ($sc != 'Y') { // ignore Y on A file		
+			echo "$sc|$snp\n";
+		};
 	};
 };
+exit;
