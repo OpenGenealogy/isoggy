@@ -11,19 +11,25 @@ versions of Linux, you need to install:
 
     sudo apt-get install php5-cli
     
-For how to install command-line PHP in other environments, see [PHP](http://php.net/).     
+For how to install command line PHP in other environments, see [PHP](http://php.net/).     
 
 ##Usage
 
 ###readgroup
+First retrieve the [latest haplogroup tree for A](http://www.isogg.org/tree/ISOGG_HapgrpA.html)
+from the ISOGG web site, and save it locally:
 
-    php readgroup.php A >a.txt
+    curl -O http://www.isogg.org/tree/ISOGG_HapgrpA.html
+
+Now, redirect that file to the input of readgroup.php and redirect the
+output to a new local file. 
+
+    php readgroup.php <ISOGG_HapgrpA.html >A.txt
     
-This accesses the [latest haplogroup tree for A](http://www.isogg.org/tree/ISOGG_HapgrpA.html) from
-the [International Society of Genetic Genealogists](http://www.isogg.org/tree/), attempts to reformat
-the sometimes inconsistent text, and writes the results to stdout (in this example, piped to a.txt).
+This reads the copy of the web page, attempts to reformat
+the sometimes inconsistent text, and writes the results to stdout (in this example, redirected to A.txt).
 
-Change the letter A to another value for a different haplogroup.  Current acceptable values are single
+Change the letter A (before .html) to another value for a different haplogroup.  Current acceptable values are single
 letters from A to T, inclusive.
 
 The results look like this, in subclade order:
@@ -35,12 +41,18 @@ The subclade is followed by |.  Then the SNPs are shown, separated with commas.
 If a SNP has aliases, they are separated with a /.
 
 ###readindex
+First retrieve the [latest Y-DNA SNP Index](http://www.isogg.org/tree/ISOGG_YDNA_SNP_Index.html) 
+from the ISOGG web site and save it locally:
 
-    php readindex.php >index.txt
+    curl -O http://www.isogg.org/tree/ISOGG_YDNA_SNP_Index.html
     
-This accesses the [latest Y-DNA SNP Index](http://www.isogg.org/tree/ISOGG_YDNA_SNP_Index.html) from
-the [International Society of Genetic Genealogists](http://www.isogg.org/tree/), attempts to reformat
-the sometimes inconsistent text, and writes the results to stdout (in this example, piped to index.txt)    
+Now, redirect that file to the input of readindex.php and redirect the
+output to a new local file.    
+
+    php readindex.php <ISOGG_YDNA_SNP_Index.html >index.txt
+    
+This reads the copy of the web page, attempts to reformat
+the sometimes inconsistent text, and writes the results to stdout (in this example, redirected to index.txt)    
 
 The results are intended to be the same as that page, in SNP order.  The fields are separated by |, 
 and are SNP, haplogroup, alternate names, refSNP id, Y-position, and mutation.
@@ -56,15 +68,13 @@ Future plans could include a combined output in a more re-usable form
 such as json, and running against old versions of the haplogroup trees.
 
 Suggestions and comments, and (especially) bug reports are very
-welcome.  Please use Github issues for these, so they can be tracked.
+welcome.  Please use Github issues or pull requests for these, so they can be tracked.
 
-##Notes
+##Credits
 
-These programs retrieve web pages direct from the ISOGG web site.  So save the results
-locally, please don't repeatedly run the same program against their servers.
-
-OpenGenealogy and Rob Hoare have no connection to ISOGG or their data. We appreciate the 
+OpenGenealogy and Rob Hoare are not connected to ISOGG or their data. We appreciate the 
 efforts of their many volunteers to provide this great resource for genetic genealogy.
 
-The [Y-DNA Haplogroup Tree](http://www.isogg.org/tree/index.html) is Copyright 2014
+The [Y-DNA Haplogroup Tree](http://www.isogg.org/tree/index.html) that is
+read by these programs is Copyright 2014
  International Society of Genetic Genealogy.

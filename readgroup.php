@@ -1,11 +1,8 @@
 <?php
-// extract haplogroup - parameter is A to T.
+// extract haplogroup - parameter is A to T. - version 0.1.0
 // Copyright 2014 Rob Hoare.  License: MIT.
 // https://github.com/OpenGenealogy/isoggy
-$ch = strtoupper($argv[1]);
-if (ctype_alpha($ch) && strlen($ch) == 1) {$alpha = $ch;} 
-else {echo "Invalid parameter\n"; exit;};
-$page = file_get_contents('http://www.isogg.org/tree/ISOGG_Hapgrp'.$alpha.'.html');
+$page = file_get_contents('php://stdin');
 preg_match_all("~<!(.*?)<br>~s",$page,$matches);
 foreach($matches[0] as $match) {
 	$match = str_replace('&nbsp;','',$match);
