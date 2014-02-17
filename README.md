@@ -4,7 +4,16 @@ isoggy
 Extract (and later validate) information from the ISOGG Y-DNA Haplogroup Tree,
 so that the data can be used in genetic genealogy programs.
 
-##Usage:
+##Requirements
+
+These programs are written in command-line php.  To run them on Debian/Ubuntu
+versions of Linux, you need to install:
+
+    sudo apt-get install php5-cli
+    
+For how to install command-line PHP in other environments, see [PHP](http://php.net/).     
+
+##Usage
 
 ###readgroup
 
