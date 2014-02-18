@@ -59,7 +59,7 @@ and are SNP, haplogroup, alternate names, refSNP id, Y-position, and mutation.
 
 If there is more than one alternate name, they are separated with a semicolon and space.
 
-##compare
+###compare
 The compare program is a very early version.  It is intended to check for
 consistency between and within each of the group files, and the index file.
 
@@ -95,9 +95,18 @@ such as json, and running against old versions of the haplogroup trees.
 Suggestions and comments, and (especially) bug reports are very
 welcome.  Please use Github issues or pull requests for these, so they can be tracked.
 
+##Who's using isoggy?
+
+I wrote isoggy to support [yreport](https://github.com/OpenGenealogy/yreport), a in-progress
+very early attempt at a Y-DNA to subclade program.
+
+Do you find this useful for you genetic genealogy project?  If so,
+please let me know (via issues) and, if appropriate, I'll add
+a link to your project here. 
+
 ##Credits
 
-Although Rob Hoare is a member of ISOGG, these programs and OpenGenealogy have
+Although Rob Hoare is a (rather inactive) member of ISOGG, these programs and OpenGenealogy have
 no connection with ISOGG, nor with the creation of the Y-tree. I appreciate the 
 efforts of the many ISOGG volunteers that provide such a great resource for genetic genealogy.
 

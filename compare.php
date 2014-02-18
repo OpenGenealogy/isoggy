@@ -48,7 +48,7 @@ foreach ($group as $groupentry) {
 		};
 	};
 };	
-// now, is every subclade in the idnex also in the group file?
+// now, is every subclade in the index also in the group file?
 
 foreach ($groups as $g) {
 	foreach ($index as $i) {
