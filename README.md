@@ -80,8 +80,8 @@ Example of results:
 
     M3428 for G2a not found in index
     PF3344 for G2a2b2a not found in index
-    G1a1a is present in index but not in group file
-    G2a2b2a1a1a1 is present in index but not in group file
+    G1a1a is present in index L201 but not in group file
+    G2a2b2a1a1a1 is present in index L1263 but not in group file
 
 
 ##Roadmap

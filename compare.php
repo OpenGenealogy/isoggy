@@ -2,7 +2,7 @@
 // compare haplogroup files and the index
 // Copyright 2014 Rob Hoare.  License: MIT.  
 // https://github.com/OpenGenealogy/isoggy	
-$version = '0.1.0';
+$version = '0.1.1';
 $group = file('php://stdin'); // read group from stdin
 $index = file('index.txt'); // read index (make into arg)
 //print_r($index);
@@ -64,7 +64,7 @@ foreach ($groups as $g) {
 				$rsc = preg_quote($sc,'~'); // escape 
 				$matches  = preg_grep ("~^".$rsc."\|~", $group);
 				if (count($matches) == 0) {
-					echo "$sc is present in index but not in group file\n";
+					echo "$sc is present in index $snp but not in group file\n";
 				};	
 			};	
 		};
