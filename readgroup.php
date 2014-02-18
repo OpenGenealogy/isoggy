@@ -16,7 +16,6 @@ foreach($matches[0] as $match) { // for each set of details
 	if (!strstr($entry,'font-weight:')) { // skip stylesheet
 		$entry = trim(str_replace('">','',$entry)); // fix untidy A
 		list($sc,$snp) = explode(' ',$entry,2); // split subclade, snp
-		$snp = str_replace('/S9 PF605','/S9,PF605',$snp); // fix R
 		$snp = str_replace(' ','',$snp); // remove spaces
 		$snp = str_replace('>','',$snp); // remove stray tag closings
 		if ($sc != 'Y') { // ignore Y on A file		

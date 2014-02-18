@@ -72,9 +72,9 @@ welcome.  Please use Github issues or pull requests for these, so they can be tr
 
 ##Credits
 
-OpenGenealogy and Rob Hoare are not connected to ISOGG or their data. We appreciate the 
-efforts of their many volunteers to provide this great resource for genetic genealogy.
+Although Rob Hoare is a member of ISOGG, these programs and OpenGenealogy have
+no connection with ISOGG, nor with the creation of the Y-tree. I appreciate the 
+efforts of the many ISOGG volunteers that provide such a great resource for genetic genealogy.
 
 The [Y-DNA Haplogroup Tree](http://www.isogg.org/tree/index.html) that is
-read by these programs is Copyright 2014
- International Society of Genetic Genealogy.
+read by these programs is (c) Copyright 2014 International Society of Genetic Genealogy.
