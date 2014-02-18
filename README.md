@@ -1,7 +1,7 @@
 isoggy
 ======
 
-Extract (and later validate) information from the ISOGG Y-DNA Haplogroup Tree,
+Extract and validate information from the ISOGG Y-DNA Haplogroup Tree,
 so that the data can be used in genetic genealogy programs.
 
 ##Requirements
@@ -59,10 +59,35 @@ and are SNP, haplogroup, alternate names, refSNP id, Y-position, and mutation.
 
 If there is more than one alternate name, they are separated with a semicolon and space.
 
+##compare
+The compare program is a very early version.  It is intended to check for
+consistency between and within each of the group files, and the index file.
+
+Many of the inconsistences are typos, some are formatting problems
+like commas missing that garble values.
+
+So far, this checks that each SNP listed in the group file is present in the 
+index file, and that each subclade in the index file is in a group file.
+
+Known bugs: does not yet handle two letter groups like BT.  Assumes index file
+is named index.txt, this will become a parameter soon.
+
+    php compare.php <G.txt
+
+This runs the compare for the group G, and prints the result to stdout.
+
+Example of results:
+
+    M3428 for G2a not found in index
+    PF3344 for G2a2b2a not found in index
+    G1a1a is present in index but not in group file
+    G2a2b2a1a1a1 is present in index but not in group file
+
+
 ##Roadmap
 
-The next step (in progress) is to compare the haplogroup files with the index file, to
-check that these programs work, and that the index is complete.
+The next step (in progress) is improve the compare (consistency check)
+program, adding extra checks and improving what it already does.
 
 Future plans could include a combined output in a more re-usable form
 such as json, and running against old versions of the haplogroup trees.

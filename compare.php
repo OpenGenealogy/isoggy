@@ -53,9 +53,7 @@ foreach ($group as $groupentry) {
 foreach ($groups as $g) {
 	foreach ($index as $i) {
 		$ival = explode('|',$i);
-		//print_r($ival);
 		$start = substr($ival[1],0,1);
-		//echo "$start\n";
 		if ($start == $g) {
 			$snp = $ival[0];
 			$sc = $ival[1];
